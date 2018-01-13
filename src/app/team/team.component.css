@@ -1,9 +1,22 @@
 .teamBox{
+    text-decoration: none;
     margin: 5px;
     padding: 20px;
     max-width: 20%;
-    display: inline-block;
+    border-radius: 4px;
+    display: block;
     -webkit-box-shadow: 3px 3px 16px -1px rgba(0,0,0,0.83);
     -moz-box-shadow: 3px 3px 16px -1px rgba(0,0,0,0.83);
     box-shadow: 3px 3px 16px -1px rgba(0,0,0,0.83);
+}
+
+.teamBox:hover{
+    -webkit-box-shadow: 1px 3px 16px -1px rgba(0,0,0,0.83);
+    -moz-box-shadow: 1px 3px 16px -1px rgba(0,0,0,0.83);
+    box-shadow: 1px 3px 16px -1px rgba(0,0,0,0.83);
+    
+}
+
+.teamBox:active{
+    transform: translateY(1px);    
 }

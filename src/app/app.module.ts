@@ -10,13 +10,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { ConferenceService } from './conference.service';
 import { DivisionService } from './division.service';
 import { DivisionComponent } from './division/division.component';
+import { PlayerComponent } from './player/player.component';
+import { PlayerService } from './player.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TeamComponent,
-    DivisionComponent
+    DivisionComponent,
+    PlayerComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,8 @@ import { DivisionComponent } from './division/division.component';
     TeamService,
     MessageService,
     ConferenceService,
-    DivisionService
+    DivisionService,
+    PlayerService
   ],
   bootstrap: [AppComponent]
 })

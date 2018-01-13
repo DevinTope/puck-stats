@@ -21,16 +21,6 @@ export class TeamComponent implements OnInit {
   }
 
   getTeams(): void{
-    
-    if(!this.divID){
-      this.teamService.getTeams().subscribe(teams => this.teams = teams.filter(team => team.division.id == this.divID));
-    }
-    else{
-      this.teamService.getTeams().subscribe(teams => this.teams = teams.filter(team => team.division.id == this.divID));
-    }
-  }
-
-  filterTeams(team: Team){
-    return !(team.division.id == 18);
+    this.teamService.getTeams().subscribe(teams => this.teams = teams.filter(team => team.division.id == this.divID).sort((a,b)=>a.name.localeCompare(b.name)));
   }
 }

@@ -1,4 +1,9 @@
 <h3>Teams</h3>
-<div *ngFor="let team of teams" class="teamBox">
-  {{team.name}}
+<div *ngFor="let team of teams">
+  <a href="#" class="teamBox">
+    {{team.name}}
+  </a>
+  <div *ngIf="team">
+      <app-player [teamID]='team.id'></app-player>
+  </div>
 </div>
