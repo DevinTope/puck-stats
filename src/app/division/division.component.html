@@ -1,0 +1,4 @@
+<div *ngFor="let division of divisions">
+  <h2>{{division.name}}</h2>
+  <app-team [divID]='division.id'></app-team>
+</div>

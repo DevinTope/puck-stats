@@ -2,11 +2,15 @@ export class Team {
     id: number;
     name: string;
     venue: {};
-    abbrev: string;
+    abb: string;
     teamName: string;
     locationName: string;
     firstYear: string;
-    division: {};
+    division: {
+        id: number;
+        name: string;
+        conference: {}
+    };
     conference: {};
     officialSiteUrl: string;
 }

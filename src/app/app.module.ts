@@ -7,18 +7,27 @@ import { TeamComponent } from './team/team.component';
 import { TeamService } from './team.service';
 import { MessageService } from './message.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ConferenceService } from './conference.service';
+import { DivisionService } from './division.service';
+import { DivisionComponent } from './division/division.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TeamComponent
+    TeamComponent,
+    DivisionComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule
   ],
-  providers: [TeamService,MessageService],
+  providers: [
+    TeamService,
+    MessageService,
+    ConferenceService,
+    DivisionService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

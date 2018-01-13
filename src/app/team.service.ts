@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
-import { catchError, tap } from 'rxjs/operators';
+import { catchError, filter, tap } from 'rxjs/operators';
 import 'rxjs/add/operator/map';
 import { Team } from './team';
 import { MessageService } from './message.service';
@@ -19,7 +19,17 @@ export class TeamService {
     private http: HttpClient, 
     private messageService: MessageService) { }
 
-  getTeams():Observable<Team[]>{
+
+  getTeam(id: number): Observable<Team>{
+    return this.http.get<Team>(this.httpUrl + `/teams/${id}`)
+    .map(team => team['teams'])
+    .pipe(
+      tap(_ => this.log(`fetched team id=${id}`)),
+      catchError(this.handleError<Team>(`getHero id=${id}`))
+    )
+  }
+
+  getTeams(): Observable<Team[]>{
     return this.http.get<Team[]>(this.httpUrl+"/teams")
       .map(team => team['teams'])
       .pipe(
